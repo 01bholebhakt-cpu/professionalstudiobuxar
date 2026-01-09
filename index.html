@@ -19,168 +19,79 @@ const BRAND = {
 </script>
 
 <style>
-:root{
---black:#0b0b0b;
---gold:#c9a24d;
---soft:#e7cf8a;
-}
+:root{--black:#0b0b0b;--gold:#c9a24d;--soft:#e7cf8a}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Manrope,sans-serif;background:var(--black);color:#fff}
 h1,h2,h3,h4{font-family:Cinzel,serif}
 a{text-decoration:none;color:inherit}
 
-/* INTRO */
-.intro{
-position:fixed;inset:0;background:#000;
-display:flex;align-items:center;justify-content:center;
-flex-direction:column;z-index:9999
-}
+.intro{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:9999}
 .intro h1{color:var(--gold);font-size:56px}
 .intro p{margin-top:14px;letter-spacing:3px;color:#aaa}
-.loader{
-width:60px;height:60px;
-border:3px solid rgba(201,162,77,.3);
-border-top:3px solid var(--gold);
-border-radius:50%;
-margin-top:25px;
-animation:spin 1s linear infinite
-}
+.loader{width:60px;height:60px;border:3px solid rgba(201,162,77,.3);border-top:3px solid var(--gold);border-radius:50%;margin-top:25px;animation:spin 1s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* HEADER */
 header{height:100vh;position:relative;overflow:hidden}
-.slides img{
-position:absolute;width:100%;height:100%;
-object-fit:cover;opacity:0
-}
+.slides img{position:absolute;width:100%;height:100%;object-fit:cover;opacity:0}
 .slides img:nth-child(1){animation:slide 18s infinite}
 .slides img:nth-child(2){animation:slide 18s infinite 6s}
 .slides img:nth-child(3){animation:slide 18s infinite 12s}
-@keyframes slide{
-0%{opacity:0}10%{opacity:1}30%{opacity:1}40%{opacity:0}
-}
-header::after{
-content:"";position:absolute;inset:0;
-background:rgba(0,0,0,.6);z-index:1
-}
+@keyframes slide{0%{opacity:0}10%{opacity:1}30%{opacity:1}40%{opacity:0}}
+header::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.6);z-index:1}
 
-/* HERO */
-.hero{
-position:relative;z-index:2;height:100%;
-display:flex;flex-direction:column;
-align-items:center;justify-content:center;
-text-align:center
-}
+.hero{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .hero h1{color:var(--gold);font-size:56px}
 .hero p{margin-top:10px;color:#ddd}
-.hero .btns{
-margin-top:35px;display:flex;gap:20px;flex-wrap:wrap
-}
-.hero a{
-padding:14px 40px;border-radius:60px;
-font-family:Cinzel,serif;letter-spacing:2px;
-transition:.3s
-}
+.hero .btns{margin-top:35px;display:flex;gap:20px;flex-wrap:wrap}
+.hero a{padding:14px 40px;border-radius:60px;font-family:Cinzel,serif;letter-spacing:2px;transition:.3s}
 .hero a:hover{transform:scale(1.05)}
 .reserve{border:2px solid var(--gold);color:var(--gold)}
 .enquiry{background:var(--gold);color:#000}
 
-/* SECTIONS */
 section{padding:90px 6%}
-.section-title{text-align:center;margin-bottom:50px}
-.section-title h2{color:var(--gold)}
 
-/* OWNER */
-.owner-box{
-max-width:900px;margin:auto;
-display:flex;gap:40px;
-align-items:center;flex-wrap:wrap;
-background:#111;border:1px solid rgba(201,162,77,.4);
-padding:40px;border-radius:22px
-}
-.owner-box img{
-width:180px;height:180px;
-object-fit:cover;border-radius:50%;
-border:3px solid var(--gold)
-}
+.owner-box{max-width:900px;margin:auto;display:flex;gap:40px;align-items:center;flex-wrap:wrap;background:#111;border:1px solid rgba(201,162,77,.4);padding:40px;border-radius:22px}
+.owner-box img{width:180px;height:180px;object-fit:cover;border-radius:50%;border:3px solid var(--gold)}
 .owner-box h3{color:var(--gold)}
-.owner-box p{
-margin-top:10px;font-style:italic;
-color:#ccc;line-height:1.8
-}
-.owner-box span{
-display:block;margin-top:15px;
-color:var(--soft);letter-spacing:2px
-}
+.owner-box p{margin-top:10px;font-style:italic;color:#ccc;line-height:1.8}
+.owner-box span{display:block;margin-top:15px;color:var(--soft);letter-spacing:2px}
 
-/* SERVICES */
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px
-}
-.card{
-background:#111;border:1px solid rgba(201,162,77,.3);
-padding:25px;border-radius:16px;
-text-align:center;transition:.3s
-}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+.card{background:#111;border:1px solid rgba(201,162,77,.3);padding:25px;border-radius:16px;text-align:center;transition:.3s}
 .card:hover{transform:translateY(-10px);border-color:var(--gold)}
 .card h4{color:var(--soft)}
 
-/* INSTAGRAM */
-.insta{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px
-}
-.insta iframe{
-width:100%;height:450px;
-border:none;border-radius:16px
-}
+.insta{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.insta iframe{width:100%;height:450px;border:none;border-radius:16px}
 
-/* FOOTER */
-footer{
-background:#000;border-top:2px solid rgba(201,162,77,.4);
-padding:90px 6% 40px;text-align:center
-}
-.copy{color:#666;font-size:12px}
+footer{background:#000;border-top:2px solid rgba(201,162,77,.5);padding:180px 6% 90px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:60px}
+footer h3{color:var(--gold);margin-bottom:18px;letter-spacing:2px}
+footer p,a{color:#aaa;font-size:15px;line-height:2}
+.copy{text-align:center;margin-top:70px;color:#666;font-size:13px;letter-spacing:1px}
 
-@media(max-width:768px){
-.hero h1{font-size:36px}
-.owner-box{justify-content:center;text-align:center}
-}
+@media(max-width:768px){.hero h1{font-size:36px}.owner-box{text-align:center;justify-content:center}}
 </style>
 </head>
-
 <body>
 
-<!-- INTRO -->
 <div class="intro" id="intro">
 <h1><script>document.write(BRAND.name)</script></h1>
 <div class="loader"></div>
 <p><script>document.write(BRAND.tagline)</script></p>
 </div>
+<script>setTimeout(()=>{intro.style.opacity=0;setTimeout(()=>intro.remove(),800)},2000)</script>
 
-<script>
-setTimeout(()=>{
-document.getElementById("intro").style.opacity="0";
-setTimeout(()=>document.getElementById("intro").remove(),800);
-},2000);
-</script>
-
-<!-- HEADER -->
 <header>
 <div class="slides">
 <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
 <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf">
 <img src="https://images.unsplash.com/photo-1530023367847-a683933f4172">
 </div>
-
 <div class="hero">
 <h1><script>document.write(BRAND.name)</script></h1>
 <p><script>document.write(BRAND.tagline)</script></p>
 <p style="font-size:14px;color:#aaa"><script>document.write(BRAND.location)</script></p>
-
 <div class="btns">
 <a class="reserve" href="https://wa.me/916299960470">Reserve Your Date</a>
 <a class="enquiry" href="#enquiry">Enquiry</a>
@@ -188,25 +99,18 @@ setTimeout(()=>document.getElementById("intro").remove(),800);
 </div>
 </header>
 
-<!-- OWNER -->
 <section>
 <div class="owner-box">
-<img src="https://via.placeholder.com/300" alt="Owner Sonu">
+<img src="https://via.placeholder.com/300">
 <div>
 <h3>Owner’s Note</h3>
-<p>
-“Photography is not just taking photos,  
-it’s about capturing emotions and memories that stay forever.  
-Every wedding we shoot is like our own family celebration.”
-</p>
+<p>“Photography is not just taking photos, it’s about capturing emotions and memories that stay forever.”</p>
 <span>— Sonu (Founder)</span>
 </div>
 </div>
 </section>
 
-<!-- SERVICES -->
 <section>
-<div class="section-title"><h2>Our Services</h2></div>
 <div class="services">
 <div class="card"><h4>Wedding Photography</h4></div>
 <div class="card"><h4>Cinematic Films</h4></div>
@@ -217,9 +121,7 @@ Every wedding we shoot is like our own family celebration.”
 </div>
 </section>
 
-<!-- INSTAGRAM -->
 <section>
-<div class="section-title"><h2>Our Work</h2></div>
 <div class="insta">
 <iframe src="https://www.instagram.com/p/DHIEvoQvalt/embed"></iframe>
 <iframe src="https://www.instagram.com/p/DFPzoOJvqQw/embed"></iframe>
@@ -228,7 +130,24 @@ Every wedding we shoot is like our own family celebration.”
 </section>
 
 <footer>
-<p class="copy">© 2026 Professional Studio Buxar · All Rights Reserved</p>
+<div class="footer-grid">
+<div>
+<h3>Professional Studio Buxar</h3>
+<p>Wedding Photography & Cinematic Films</p>
+<p>Pre Wedding · Candid · Traditional · Events</p>
+</div>
+<div>
+<h3>Contact</h3>
+<p>📞 +91 62999 60470</p>
+<p>📍 Buxar, Bihar</p>
+</div>
+<div>
+<h3>Social</h3>
+<p><a href="#">Instagram</a></p>
+<p><a href="#">Facebook</a></p>
+</div>
+</div>
+<p class="copy">© 2026 Professional Studio Buxar · Crafted With Passion</p>
 </footer>
 
 </body>
